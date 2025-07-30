@@ -102,14 +102,6 @@ const App = () => {
       : console.log("Not enough money");
   };
 
-  const handleRemoveFighter = (fighter) => {
-    // Remove fighter from team
-    setTeam(team.filter(f => f.id !== fighter.id));
-    // Add fighter back to available fighters
-    setZombieFighters([...zombieFighters, fighter]);
-    // Refund the money
-    setMoney(money + fighter.price);
-  };
 
   return (
     <>
@@ -152,9 +144,7 @@ const App = () => {
                 <p>Price: ${fighter.price}</p>
                 <p>Strength: {fighter.strength}</p>
                 <p>Agility: {fighter.agility}</p>
-                <button onClick={() => handleRemoveFighter(fighter)}>
-                  Remove
-                </button>
+                
               </li>
             ))}
           </ul>
